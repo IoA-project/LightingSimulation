@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightOnOff: MonoBehaviour 
+public class LightOnOff: MonoBehaviour
 {
     public GameObject LightGroup1;
-    private bool LightOn;
-
 
     // Start is called before the first frame update
     void Start()
