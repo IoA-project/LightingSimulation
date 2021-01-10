@@ -6,18 +6,20 @@ using UnityEngine.UI;
 
 public class ColorSlider : MonoBehaviour
 {
-    [SerializeField] GameObject ChangeLight;
-    public GameObject lightObject;
+    [SerializeField] GameObject LightGroup;
     
     public Slider sliderRed;
     public Slider sliderGreen;
     public Slider sliderBlue;
 
+    public GameObject sliderObject;
+    Slider slider;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        var children = new List<Transform>();
-
+        slider = sliderObject.GetComponent<Slider>();
     }
 
     // Update is called once per frame
@@ -27,12 +29,20 @@ public class ColorSlider : MonoBehaviour
     }
     public void ValueChange()
     {
-        float x = sliderRed.value;
-        float y = sliderGreen.value;
-        float z = sliderBlue.value;
-        foreach (Transform childTransform in ChangeLight.transform)
+        float red = sliderRed.value;
+        float green = sliderGreen.value;
+        float blue = sliderBlue.value;
+        foreach (Transform childTransform in LightGroup.transform)
         {
-            childTransform.GetComponent<Light>().color = new Color(x, y, z, 1);
+            childTransform.GetComponent<Light>().color = new Color(red, green, blue, 1);
+        }
+    }
+
+    public void BrightnessValueChange()
+    {
+        foreach (Transform childTransform in LightGroup.transform)
+        {
+            childTransform.GetComponent<Light>().intensity = slider.value;
         }
     }
 }
