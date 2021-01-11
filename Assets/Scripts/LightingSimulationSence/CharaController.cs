@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharaController : MonoBehaviour {
 
     private CharacterController characterController;
+    private AudioSource audioSource;
 
     public float speed = 6.0f;
     public float jumpSpeed = 8.0f;
@@ -13,17 +14,28 @@ public class CharaController : MonoBehaviour {
     public float y_sensi = 7.0f;
     public new GameObject camera;
 
+    public AudioClip[] clips;
+    double start_time;
+    double call_time;
+
     private Vector3 moveDirection;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        audioSource = GetComponent<AudioSource>();
+        start_time = Time.time;
     }
 
     void Update()
     {
         movecon();
         cameracon();
+    }
+
+    void FixedUpdate()
+    {
+        footstep();
     }
 
     void movecon()
@@ -53,4 +65,24 @@ public class CharaController : MonoBehaviour {
         this.transform.Rotate(0, x_Rotation, 0);
         camera.transform.Rotate(-y_Rotation, 0, 0);
     }
+
+    void footstep() //‘«‰¹
+    {
+        call_time = Time.time;
+
+        if ((Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d"))
+            && Input.GetKey("space") == false 
+            && call_time - start_time > 0.7d)
+        {
+            audioSource.PlayOneShot(clips[Random.Range(0, clips.Length)]);
+            start_time = Time.time;
+        }
+
+        else if (Input.GetKey("space") && call_time - start_time > 0.8d)
+        {
+            audioSource.PlayOneShot(clips[Random.Range(0, clips.Length)]);
+            start_time = Time.time;
+        }
+    }
+
 }
