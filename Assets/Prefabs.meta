@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 3756ab4ca3f96654ba2d350f54c9edd6
+=======
+<<<<<<< HEAD:Assets/Prefabs/Slider.meta
+guid: 312093ecb297ff241a95ea0c35f0debf
+=======
+guid: d19225545a2c4064dbe76d07148a40f0
+>>>>>>> 861ccfc650b33117dcab60e3dfacb1a48fa6de41:Assets/Prefabs.meta
+>>>>>>> 861ccfc650b33117dcab60e3dfacb1a48fa6de41
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

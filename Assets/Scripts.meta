@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Scripts.meta
 guid: caf2ed32d0de4434fbf433fd0a78e509
+=======
+guid: 1356df310a427124b8f0c1aee285e2e7
+>>>>>>> 861ccfc650b33117dcab60e3dfacb1a48fa6de41:Assets/Prefabs/LightingSimulationSence.meta
+=======
+guid: e9b1f36c0aca3b8479f96b001ea8d43f
+>>>>>>> 861ccfc650b33117dcab60e3dfacb1a48fa6de41
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
