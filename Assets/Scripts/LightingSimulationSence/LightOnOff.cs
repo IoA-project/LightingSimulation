@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class LightOnOff: MonoBehaviour
 {
-    public GameObject LightGroup1;
+    public GameObject LightGroup;
 
     // Start is called before the first frame update
     void Start()
@@ -20,13 +19,13 @@ public class LightOnOff: MonoBehaviour
     }
     public void OnClick()
     {
-        if (LightGroup1.activeSelf)
+        if (LightGroup.activeSelf)
         {
-            LightGroup1.SetActive(false);
+            LightGroup.SetActive(false);
         }
         else
         {
-            LightGroup1.SetActive(true);
+            LightGroup.SetActive(true);
         }
     }
 }

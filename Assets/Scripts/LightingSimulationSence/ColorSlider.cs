@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ColorSlider : MonoBehaviour
 {
-    [SerializeField] GameObject LightGroup1;
+    [SerializeField] GameObject LightGroup;
     
     public Slider sliderRed;
     public Slider sliderGreen;
@@ -32,7 +32,7 @@ public class ColorSlider : MonoBehaviour
         float red = sliderRed.value;
         float green = sliderGreen.value;
         float blue = sliderBlue.value;
-        foreach (Transform childTransform in LightGroup1.transform)
+        foreach (Transform childTransform in LightGroup.transform)
         {
             childTransform.GetComponent<Light>().color = new Color(red, green, blue, 1);
         }
@@ -40,7 +40,7 @@ public class ColorSlider : MonoBehaviour
 
     public void BrightnessValueChange()
     {
-        foreach (Transform childTransform in LightGroup1.transform)
+        foreach (Transform childTransform in LightGroup.transform)
         {
             childTransform.GetComponent<Light>().intensity = slider.value;
         }
