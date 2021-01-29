@@ -12,14 +12,17 @@ public class ColorSlider : MonoBehaviour
     public Slider sliderGreen;
     public Slider sliderBlue;
 
-    public GameObject sliderObject;
-    Slider slider;
+    public Slider sliderBrightness;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        slider = sliderObject.GetComponent<Slider>();
+        //sliderBrightness = sliderObject.GetComponent<Slider>();
+        sliderRed.value = 0.7f;
+        sliderGreen.value = 0.5f;
+        sliderBlue.value = 0.3f;
+        sliderBrightness.value = 4;
     }
 
     // Update is called once per frame
@@ -42,7 +45,7 @@ public class ColorSlider : MonoBehaviour
     {
         foreach (Transform childTransform in LightGroup.transform)
         {
-            childTransform.GetComponent<Light>().intensity = slider.value;
+            childTransform.GetComponent<Light>().intensity = sliderBrightness.value;
         }
     }
 }

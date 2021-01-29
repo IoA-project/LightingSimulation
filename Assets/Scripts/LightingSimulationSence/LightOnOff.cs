@@ -10,6 +10,7 @@ public class LightOnOff: MonoBehaviour
     void Start()
     {
         var children = new List<Transform>();
+
     }
 
     // Update is called once per frame
