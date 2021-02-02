@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 61494965b18e61442bd2d22a9ad4f0f1
+guid: 8bc02d931d67680409f329c84428b5ff
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - LightGroup1: {fileID: 116876955970792181, guid: c59687003e82c7741b3b55362e1daf0f,
-      type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
