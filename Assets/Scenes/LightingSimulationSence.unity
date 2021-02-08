@@ -556,27 +556,27 @@ PrefabInstance:
         type: 3}
       propertyPath: clips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 42013c4a03487414c9e4a09af90548ec, type: 3}
+      objectReference: {fileID: 8300000, guid: 91bcd96c53b020447bb908b3835e93fe, type: 3}
     - target: {fileID: 7206660579440672337, guid: c6453f8e1f814744d8b94e5a6d1f9942,
         type: 3}
       propertyPath: clips.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: ff1837ea40a892b429e9af7c3109531f, type: 3}
+      objectReference: {fileID: 8300000, guid: 98274559066e6e544bcfd9d7fa215f28, type: 3}
     - target: {fileID: 7206660579440672337, guid: c6453f8e1f814744d8b94e5a6d1f9942,
         type: 3}
       propertyPath: clips.Array.data[2]
       value: 
-      objectReference: {fileID: 8300000, guid: f82be27edd419b34d8a783cbe88f2dbb, type: 3}
+      objectReference: {fileID: 8300000, guid: 01b40acc221a92b4795f39f2ec7f3f12, type: 3}
     - target: {fileID: 7206660579440672337, guid: c6453f8e1f814744d8b94e5a6d1f9942,
         type: 3}
       propertyPath: clips.Array.data[3]
       value: 
-      objectReference: {fileID: 8300000, guid: 031579eb178f2d84c9191e505a446eec, type: 3}
+      objectReference: {fileID: 8300000, guid: 921660d3ae5d6c94a96eb6965006ec3f, type: 3}
     - target: {fileID: 7206660579440672337, guid: c6453f8e1f814744d8b94e5a6d1f9942,
         type: 3}
       propertyPath: clips.Array.data[4]
       value: 
-      objectReference: {fileID: 8300000, guid: ca0162374d2c347428254549a595eecd, type: 3}
+      objectReference: {fileID: 8300000, guid: 64c65e1edc4d18c4c8602da74b700d93, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
 --- !u!1 &448772972 stripped
@@ -603,7 +603,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.298
   m_Pitch: 1
   Loop: 0
   Mute: 0
