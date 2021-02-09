@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeButton : MonoBehaviour
+public class WeatherChange : MonoBehaviour
 {
-    public GameObject particle;
-    public int a = 0;
+    public GameObject ShowPrefab;
+    private bool ShowState = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,22 +13,21 @@ public class ChangeButton : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void Onclick()
+    public void OnClick()
     {
-        if (a == 0)
+        ShowState = !ShowState;
+        if (ShowState)
         {
-            Instantiate(particle, transform.position, transform.rotation);
-            a++;
+            Instantiate(ShowPrefab, ShowPrefab.transform.position, ShowPrefab.transform.rotation);
         }
-        else if(a == 1)
+        else
         {
             GameObject obj = GameObject.Find("Snow(Clone)");
             Destroy(obj);
-            a--;
         }
     }
     void Update()
     {
-        
+
     }
 }
