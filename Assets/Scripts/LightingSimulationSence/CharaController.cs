@@ -43,10 +43,10 @@ public class CharaController : MonoBehaviour {
         if (characterController.isGrounded)
         {
 
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical")); //通常移動
+            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             moveDirection *= speed;
 
-            if (Input.GetKey(KeyCode.Space)) //ジャンプ
+            if (Input.GetKey(KeyCode.Space))
             {
                 moveDirection.y = jumpSpeed;
             }
@@ -56,7 +56,7 @@ public class CharaController : MonoBehaviour {
         characterController.Move(moveDirection * Time.deltaTime);
     }
 
-    void cameracon() //カメラの方向の変更
+    void cameracon()
     {
         float x_Rotation = Input.GetAxis("Mouse X");
         float y_Rotation = Input.GetAxis("Mouse Y");
@@ -66,12 +66,12 @@ public class CharaController : MonoBehaviour {
         camera.transform.Rotate(-y_Rotation, 0, 0);
     }
 
-    void footstep() //足音
+    void footstep()
     {
         call_time = Time.time;
 
         if ((Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d"))
-            && Input.GetKey("space") == false 
+            && Input.GetKey("space") == false
             && call_time - start_time > 0.7d)
         {
             audioSource.PlayOneShot(clips[Random.Range(0, clips.Length)]);
