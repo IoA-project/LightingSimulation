@@ -9,7 +9,8 @@ public class WeatherChange : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        ShowState = !ShowState;
+        Instantiate(ShowPrefab, ShowPrefab.transform.position, ShowPrefab.transform.rotation);
     }
 
     // Update is called once per frame
