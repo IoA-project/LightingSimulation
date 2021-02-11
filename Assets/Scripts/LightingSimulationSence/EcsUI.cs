@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 
-public class WeatherChange : MonoBehaviour
+public class EcsUI : MonoBehaviour
 {
     public GameObject GameManager;
     private GameManager gm;
@@ -16,7 +16,7 @@ public class WeatherChange : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void OnClick()
+    public void WeatherChangeOnClick()
     {
         if (gm.ShowState)
         {
@@ -28,6 +28,11 @@ public class WeatherChange : MonoBehaviour
             Instantiate(gm.ShowPrefab, gm.ShowPrefab.transform.position, gm.ShowPrefab.transform.rotation);
         }
         gm.ShowState = !gm.ShowState;
+    }
+    public void LightingOnClick()
+    {
+        gm.LightUIPreAction();
+        gm.SetGameMode("Light");
     }
     void Update()
     {

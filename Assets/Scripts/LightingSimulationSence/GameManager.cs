@@ -7,7 +7,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class GameManager : MonoBehaviour
 {
     public GameObject player;
-    public GameObject EcsModal;
+    public GameObject EcsUI;
+    public GameObject LightUI;
     public GameObject ShowPrefab;
     public bool ShowState;
     public GameObject UI;
@@ -18,7 +19,8 @@ public class GameManager : MonoBehaviour
     {
         ShowState = true;
         GameMode = "Normal";
-        EcsModal.SetActive(false);
+        EcsUI.SetActive(false);
+        LightUI.SetActive(false);
         fpc = player.GetComponent<FirstPersonController>();
         Instantiate(ShowPrefab, ShowPrefab.transform.position, ShowPrefab.transform.rotation);
 
@@ -32,9 +34,13 @@ public class GameManager : MonoBehaviour
                 NormalAction();
                 break;
             case "Ecs":
-                EcsAction();
+                EcsUIAction();
+                break;
+            case "Light":
+                LightUIAction();
                 break;
             default:
+                GameMode = "Normal";
                 break;
         }
 
@@ -42,25 +48,49 @@ public class GameManager : MonoBehaviour
 
     public void NormalAction(){
         if (Input.GetKeyDown(KeyCode.Escape)){
-            EcsPreAction();
+            EcsUIPreAction();
         }
     }
-    private void EcsPreAction(){
+    public void LightUIPreAction(){
+        fpc.enabled = false;
+        LightUI.SetActive(true);
+        EcsUI.SetActive(false);
+        Cursor.visible = true;    // カーソル表示
+        GameMode = "Light";
+
+    }
+    public void LightUIAction()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            GameMode = "Normal";
+            LightUI.SetActive(false);
+            UI.SetActive(true);
+            Cursor.visible = false;     // カーソル非表
+            fpc.enabled = true;
+        }
+    }
+
+    private void EcsUIPreAction(){
         GameMode = "Ecs";
-        EcsModal.SetActive(true);
+        EcsUI.SetActive(true);
         UI.SetActive(false);
         Cursor.visible = true;    // カーソル表示
         fpc.enabled = false;
     }
 
-    public void EcsAction()
+    public void EcsUIAction()
     {
         if (Input.GetKeyDown(KeyCode.Escape)){
             GameMode = "Normal";
-            EcsModal.SetActive(false);
+            EcsUI.SetActive(false);
             UI.SetActive(true);
             Cursor.visible = false;     // カーソル非表示
             fpc.enabled = true;
         }
+    }
+
+    public void SetGameMode(string Mode){
+        GameMode = Mode;
+        Debug.Log(GameMode);
     }
 }
