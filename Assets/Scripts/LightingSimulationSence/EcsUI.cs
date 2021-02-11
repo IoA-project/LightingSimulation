@@ -34,6 +34,12 @@ public class EcsUI : MonoBehaviour
         gm.LightUIPreAction();
         gm.SetGameMode("Light");
     }
+
+    public void EndBottonOnClick(){
+      UnityEditor.EditorApplication.isPlaying = false;
+      UnityEngine.Application.Quit();
+    }
+
     void Update()
     {
 
