@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: 7b616ea750ff68148b2a64a6b386c66a
+guid: 141ec9699a3255542a423438cee0965c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - particle: {fileID: 7077809453024879200, guid: 0cfc3c2501ac9ce46a5f37a9b90a3080, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
