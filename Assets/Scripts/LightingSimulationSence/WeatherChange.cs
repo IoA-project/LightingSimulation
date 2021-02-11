@@ -2,30 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class WeatherChange : MonoBehaviour
 {
-    public GameObject ShowPrefab;
-    private bool ShowState = false;
+    public GameObject GameManager;
+    private GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
-        ShowState = !ShowState;
-        Instantiate(ShowPrefab, ShowPrefab.transform.position, ShowPrefab.transform.rotation);
+        gm = GameManager.GetComponent<GameManager>();
+
     }
 
     // Update is called once per frame
     public void OnClick()
     {
-        ShowState = !ShowState;
-        if (ShowState)
-        {
-            Instantiate(ShowPrefab, ShowPrefab.transform.position, ShowPrefab.transform.rotation);
-        }
-        else
+        if (gm.ShowState)
         {
             GameObject obj = GameObject.Find("Snow(Clone)");
             Destroy(obj);
         }
+        else
+        {
+            Instantiate(gm.ShowPrefab, gm.ShowPrefab.transform.position, gm.ShowPrefab.transform.rotation);
+        }
+        gm.ShowState = !gm.ShowState;
     }
     void Update()
     {
