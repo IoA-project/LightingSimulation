@@ -13,13 +13,13 @@ public class ColorSlider : MonoBehaviour
     void Start()
     {
         //sliderBrightness = sliderObject.GetComponent<Slider>();
-        sliderBrightness.value = 4;
+        sliderBrightness.value = 10;
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+
     }
 
     public void BrightnessValueChange()
